@@ -1,6 +1,5 @@
-#define _CRT_SECURE_NO_WARNINGS 1
-#include <bits/stdc++.h>
 #include "InsertSort.h"
+
 using namespace std;
 
 int main()
