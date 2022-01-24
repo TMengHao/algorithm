@@ -8,7 +8,7 @@ void PrintSort(int arr[], int start, int end);
 
 void InsertSort(int arr[], int n) {
 	int i, j, temp;
-	printf("初始化数组为:\t");
+	printf("初始化数据:");
 	PrintSort(arr,0,0);PrintSort(arr,1,n-1);  
 	printf("\n");
 	for (i = 1; i <= n - 1; ++i) {
@@ -19,7 +19,7 @@ void InsertSort(int arr[], int n) {
 			}
 			arr[j + 1] = temp;
 		}
-		printf("%d次排序后:\t",i);
+		printf("%d次排序后: ",i);
 		PrintSort(arr,0,i);PrintSort(arr,i+1,n-1);
 		printf("\n");
 	}
