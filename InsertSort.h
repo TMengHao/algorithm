@@ -1,14 +1,14 @@
 #ifndef _INSERT_SORT_H
 #define _INSERT_SORT_H
 
-#include <bits/stdc++.h>
+#include <cstdio>
 
 void InsertSort(int arr[], int n);
 void PrintSort(int arr[], int start, int end);
 
 void InsertSort(int arr[], int n) {
 	int i, j, temp;
-	printf("初始化数据:");
+	printf("初始化数据：");
 	PrintSort(arr,0,0);
 	PrintSort(arr,1,n-1);
 	printf("\n");
