@@ -8,8 +8,9 @@ void PrintSort(int arr[], int start, int end);
 
 void InsertSort(int arr[], int n) {
 	int i, j, temp;
-	printf("³õÊ¼»¯Êı¾İ:");
-	PrintSort(arr,0,0);PrintSort(arr,1,n-1);  
+	printf("åˆå§‹åŒ–æ•°æ®:");
+	PrintSort(arr,0,0);
+	PrintSort(arr,1,n-1);
 	printf("\n");
 	for (i = 1; i <= n - 1; ++i) {
 		if (arr[i] < arr[i - 1]) {
@@ -19,8 +20,9 @@ void InsertSort(int arr[], int n) {
 			}
 			arr[j + 1] = temp;
 		}
-		printf("%d´ÎÅÅĞòºó: ",i);
-		PrintSort(arr,0,i);PrintSort(arr,i+1,n-1);
+		printf("%dæ¬¡æ’åºå: ",i);
+		PrintSort(arr,0,i);
+		PrintSort(arr,i+1,n-1);
 		printf("\n");
 	}
 }
@@ -28,7 +30,7 @@ void PrintSort(int arr[], int start, int end) {
 	for (int i = start; i <= end; ++i) {
 		if(i == start) printf("[");
 		if(i != end) printf("%d,", arr[i]);
-		if(i == end){
+		if(i == end) {
 			printf("%d", arr[i]);
 			printf("]");
 		}
