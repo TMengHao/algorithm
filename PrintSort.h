@@ -1,4 +1,4 @@
-#ifndef _PRINT_SORT_H
+﻿#ifndef _PRINT_SORT_H
 #define _PRINT_SORT_H
 
 #include <cstdio>
@@ -42,13 +42,13 @@ void PrintShellSort(int arr[], int n, int inc[], int cn) {
 				arr[j + ck] = temp;
 			}
 		}
-		printf("增量为 %d 排序后: ", inc[k]);
+		printf("增量为%d排序后: ", inc[k]);
 		PrintArray(arr, n); printf("\n");
 	}
 }
 void PrintInsertSort(int arr[], int n) {
 	int i, j, temp;
-	printf("初始数组:");
+	printf("初始数组:  ");
 	FormatArray(arr, 0, 0);
 	FormatArray(arr, 1, n - 1);
 	printf("\n");
