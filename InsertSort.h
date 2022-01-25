@@ -3,6 +3,10 @@
 //直接插入排序
 #include <cstdio>
 
+/*
+	arr:待排序数组
+	n:数组长度
+*/
 void InsertSort(int arr[], int n);
 
 void InsertSort(int arr[], int n) {
