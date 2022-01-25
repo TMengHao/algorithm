@@ -14,6 +14,11 @@ void PrintInsertSort(int arr[], int n);
 void PrintShellSort(int arr[], int n, int inc[], int cn);
 
 /*
+	打印冒泡排序过程
+*/
+void PrintBubbleSort(int arr[], int n);
+
+/*
 	arr:待输出数组
 	n:数组长度(sizeof(arr)/sizeof(arr[0]))
 */
@@ -26,6 +31,26 @@ void PrintArray(int arr[], int n);
 */
 void FormatArray(int arr[], int start, int end);
 
+/*-----------------------------------------------------------------------------------*/
+void PrintBubbleSort(int arr[], int n) {
+	int i, j, flag, temp;
+	printf("初始数组:");
+	FormatArray(arr, 0, n - 1); printf("\n");
+	for (i = 0; i < n - 1; ++i) {
+		flag = 0;
+		for (j = n - 1; j >= i + 1; --j) {
+			if (arr[j] < arr[j - 1]) {
+				temp = arr[j - 1];
+				arr[j - 1] = arr[j];
+				arr[j] = temp;
+				flag = 1;
+			}
+		}
+		printf("第%d次排序后:", i + 1);
+		PrintArray(arr, i + 1);	FormatArray(arr, i + 1, n - 1); printf("\n");
+		if (!flag) return;
+	}
+}
 void PrintShellSort(int arr[], int n, int inc[], int cn) {
 	printf("初始数组: ");
 	PrintArray(arr, n); printf("\n");
