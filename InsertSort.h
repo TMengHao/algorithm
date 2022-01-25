@@ -1,7 +1,6 @@
 #ifndef _INSERT_SORT_H
 #define _INSERT_SORT_H
 //直接插入排序
-#include <cstdio>
 
 /*
 	arr:待排序数组

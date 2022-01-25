@@ -1,7 +1,6 @@
 #ifndef _SHELL_SORT_H
 #define _SHELL_SORT_H
-
-#include <cstdio>
+//希尔排序
 
 /*
 	arr:待排序数组
