@@ -6,12 +6,12 @@
 /*
  * 打印直接选择排序过程
  * */
-void PrintSelectSort(int arr[],int n);
+void PrintSelectSort(int arr[], int n);
 
 /*
  * 打印快速排序过程
  * */
-void PrintQuickSort(int arr[],int low,int high);
+void PrintQuickSort(int arr[], int low, int high);
 
 /*
  * 打印直接插入排序过程

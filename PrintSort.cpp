@@ -1,5 +1,6 @@
 // Created by MengHao on 2022/1/26.
 #include "PrintSort.h"
+
 using namespace std;
 
 /*
@@ -15,16 +16,17 @@ void FormatArray(int arr[], int start, int end) {
         }
     }
 }
+
 int Partition(int arr[], int i, int j) {
     int temp = arr[i];
-    while(i < j){
-        while(i < j && arr[j] >= temp) --j;
-        if(i < j){
+    while (i < j) {
+        while (i < j && arr[j] >= temp) --j;
+        if (i < j) {
             arr[i] = arr[j];
             ++i;
         }
-        while(i < j && arr[i] <= temp) ++i;
-        if(i < j){
+        while (i < j && arr[i] <= temp) ++i;
+        if (i < j) {
             arr[j] = arr[i];
             --j;
         }
@@ -32,20 +34,23 @@ int Partition(int arr[], int i, int j) {
     arr[i] = temp;
     return i;
 }
-void PrintQuickSort(int arr[],int low,int high){
+
+void PrintQuickSort(int arr[], int low, int high) {
     int overlap;
     if (low < high) {
         overlap = Partition(arr, low, high);
         PrintQuickSort(arr, low, overlap - 1);
         PrintQuickSort(arr, overlap + 1, high);
     }
-    FormatArray(arr,low,high);
+    FormatArray(arr, low, high);
     printf("\n");
 }
+
 void PrintBubbleSort(int arr[], int n) {
     int i, j, flag, temp;
     printf("初始数组:");
-    FormatArray(arr, 0, n - 1); printf("\n");
+    FormatArray(arr, 0, n - 1);
+    printf("\n");
     for (i = 0; i < n - 1; ++i) {
         flag = 0;
         for (j = n - 1; j >= i + 1; --j) {
@@ -57,13 +62,17 @@ void PrintBubbleSort(int arr[], int n) {
             }
         }
         printf("第%d次排序后:", i + 1);
-        PrintArray(arr, i + 1);	FormatArray(arr, i + 1, n - 1); printf("\n");
+        PrintArray(arr, i + 1);
+        FormatArray(arr, i + 1, n - 1);
+        printf("\n");
         if (!flag) return;
     }
 }
+
 void PrintShellSort(int arr[], int n, int inc[], int cn) {
     printf("初始数组: ");
-    PrintArray(arr, n); printf("\n");
+    PrintArray(arr, n);
+    printf("\n");
     for (int k = 0; k < cn; ++k) {
         int i, j, temp, ck = inc[k];
         for (i = ck; i < n; ++i) {
@@ -78,9 +87,11 @@ void PrintShellSort(int arr[], int n, int inc[], int cn) {
             }
         }
         printf("增量为%d排序后: ", inc[k]);
-        PrintArray(arr, n); printf("\n");
+        PrintArray(arr, n);
+        printf("\n");
     }
 }
+
 void PrintInsertSort(int arr[], int n) {
     int i, j, temp;
     printf("初始数组:  ");
@@ -101,16 +112,18 @@ void PrintInsertSort(int arr[], int n) {
         printf("\n");
     }
 }
+
 void PrintArray(int arr[], int n) {
     for (int i = 0; i < n; ++i) {
         if (i != n - 1) printf("%d,", arr[i]);
         else printf("%d", arr[i]);
     }
 }
-void PrintSelectSort(int arr[],int n){
+
+void PrintSelectSort(int arr[], int n) {
     int i, j, k, temp;
     printf("初始数组:  ");
-    FormatArray(arr,0,n-1);
+    FormatArray(arr, 0, n - 1);
     printf("\n");
     for (i = 0; i < n - 1; ++i) {
         k = i;
@@ -120,9 +133,9 @@ void PrintSelectSort(int arr[],int n){
             arr[i] = arr[k];
             arr[k] = temp;
         }
-        printf("第%d次排序后:",i+1);
-        PrintArray(arr,i+1);
-        FormatArray(arr,i+1,n-1);
+        printf("第%d次排序后:", i + 1);
+        PrintArray(arr, i + 1);
+        FormatArray(arr, i + 1, n - 1);
         printf("\n");
     }
 }
