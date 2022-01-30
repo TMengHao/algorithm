@@ -139,3 +139,38 @@ void PrintSelectSort(int arr[], int n) {
         printf("\n");
     }
 }
+
+void BigSift(int arr[], int i, int h) {
+    int j = 2 * i + 1, x = arr[i];
+    while (j <= h) {
+        if (j < h && arr[j] < arr[j + 1]) ++j;
+        if (x >= arr[j]) break;
+        arr[i] = arr[j];
+        i = j;
+        j = 2 * i + 1;
+    }
+    arr[i] = x;
+}
+
+void PrintHeapSort(int arr[], int n) {
+    int i, temp;
+    printf("初始数组:\t");
+    FormatArray(arr, 0, n - 1);
+    printf("\n");
+    for (i = n / 2 - 1; i >= 0; --i) {
+        BigSift(arr, i, n - 1);
+    }
+    printf("初始化大根堆:\t");
+    FormatArray(arr, 0, n - 1);
+    printf("\n");
+    for (i = n - 1; i > 0; --i) {
+        temp = arr[0];
+        arr[0] = arr[i];
+        arr[i] = temp;
+        printf("第%d次排序后:\t", n - i);
+        FormatArray(arr, 0, i - 1);
+        FormatArray(arr, i, n - 1);
+        printf("\n");
+        BigSift(arr, 0, i - 1);
+    }
+}

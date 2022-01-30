@@ -4,6 +4,11 @@
 #include <bits/stdc++.h>
 
 /*
+ * 打印堆排序过程
+ * */
+void PrintHeapSort(int arr[], int n);
+
+/*
  * 打印直接选择排序过程
  * */
 void PrintSelectSort(int arr[], int n);
