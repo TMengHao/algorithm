@@ -1,10 +1,19 @@
 // Created by MengHao on 2022/1/26.
 #include "PrintSort.h"
-
 using namespace std;
 
+void FormatArray(int arr[], int start, int end) {
+    for (int i = start; i <= end; ++i) {
+        if (i == start) printf("[");
+        if (i != end) printf("%d,", arr[i]);
+        else {
+            printf("%d", arr[i]);
+            printf("]");
+        }
+    }
+}
 int Partition(int arr[], int i, int j) {
-    int temp = arr[i],last = j;
+    int temp = arr[i];
     while(i < j){
         while(i < j && arr[j] >= temp) --j;
         if(i < j){
@@ -27,6 +36,8 @@ void PrintQuickSort(int arr[],int low,int high){
         PrintQuickSort(arr, low, overlap - 1);
         PrintQuickSort(arr, overlap + 1, high);
     }
+    FormatArray(arr,low,high);
+    printf("\n");
 }
 void PrintBubbleSort(int arr[], int n) {
     int i, j, flag, temp;
@@ -91,15 +102,5 @@ void PrintArray(int arr[], int n) {
     for (int i = 0; i < n; ++i) {
         if (i != n - 1) printf("%d,", arr[i]);
         else printf("%d", arr[i]);
-    }
-}
-void FormatArray(int arr[], int start, int end) {
-    for (int i = start; i <= end; ++i) {
-        if (i == start) printf("[");
-        if (i != end) printf("%d,", arr[i]);
-        else {
-            printf("%d", arr[i]);
-            printf("]");
-        }
     }
 }

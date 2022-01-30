@@ -1,7 +1,7 @@
 ﻿#ifndef _PRINT_SORT_H
 #define _PRINT_SORT_H
 
-#include <cstdio>
+#include <bits/stdc++.h>
 
 /*
  * 打印快速排序过程
@@ -28,12 +28,5 @@ void PrintBubbleSort(int arr[], int n);
  * n:数组长度(sizeof(arr)/sizeof(arr[0]))
  * */
 void PrintArray(int arr[], int n);
-
-/*
- * arr:待格式化数组(闭区间)
- * start:开始位置
- * end:结束位置
- * */
-void FormatArray(int arr[], int start, int end);
 
 #endif // !_PRINT_SORT_H
