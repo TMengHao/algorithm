@@ -4,6 +4,11 @@
 #include <bits/stdc++.h>
 
 /*
+ * 打印直接选择排序过程
+ * */
+void PrintSelectSort(int arr[],int n);
+
+/*
  * 打印快速排序过程
  * */
 void PrintQuickSort(int arr[],int low,int high);
@@ -25,7 +30,7 @@ void PrintBubbleSort(int arr[], int n);
 
 /*
  * arr:待输出数组
- * n:数组长度(sizeof(arr)/sizeof(arr[0]))
+ * n:数组长度[0,n)
  * */
 void PrintArray(int arr[], int n);
 

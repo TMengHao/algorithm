@@ -2,6 +2,9 @@
 #include "PrintSort.h"
 using namespace std;
 
+/*
+ * [start,end]
+ * */
 void FormatArray(int arr[], int start, int end) {
     for (int i = start; i <= end; ++i) {
         if (i == start) printf("[");
@@ -102,5 +105,24 @@ void PrintArray(int arr[], int n) {
     for (int i = 0; i < n; ++i) {
         if (i != n - 1) printf("%d,", arr[i]);
         else printf("%d", arr[i]);
+    }
+}
+void PrintSelectSort(int arr[],int n){
+    int i, j, k, temp;
+    printf("初始数组:  ");
+    FormatArray(arr,0,n-1);
+    printf("\n");
+    for (i = 0; i < n - 1; ++i) {
+        k = i;
+        for (j = i + 1; j < n; ++j) if (arr[j] < arr[k]) k = j;
+        if (k != i) {
+            temp = arr[i];
+            arr[i] = arr[k];
+            arr[k] = temp;
+        }
+        printf("第%d次排序后:",i+1);
+        PrintArray(arr,i+1);
+        FormatArray(arr,i+1,n-1);
+        printf("\n");
     }
 }
